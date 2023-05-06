@@ -1,6 +1,8 @@
 import { useState,useMemo } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
+import { Alert } from "reactstrap"
+
 const Form = (props) => {
 const navigate = useNavigate()
 const params = useParams()
@@ -29,7 +31,8 @@ const currentPost = useMemo(() => props.posts.find(post => post.id === parseInt(
     const handleSubmission = (event) => {
        event.preventDefault()
        props.handleSubmit(formData, props.formType)
-       navigate('/') 
+       navigate('/')
+       
     }
 
 

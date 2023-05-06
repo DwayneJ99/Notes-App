@@ -4,6 +4,8 @@ import SingleNote from './pages/SingleNote';
 import Form from './pages/Form';
 import './App.css';
 import {Route, Routes} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Alert } from 'reactstrap';
 
 
 const apiURL = 'https://notes-api-backend.herokuapp.com'
@@ -31,6 +33,7 @@ function App() {
         body: JSON.stringify(data)
       })
       getNotes()
+      
     } else {
       const response = await fetch(`${apiURL}/notes/${data.id}/`, {
         method:'put',
@@ -55,7 +58,7 @@ function App() {
 
   return (
     <div className="App">
-    <h1> My Note List</h1>
+    <h1> My Notes ✍🏽</h1>
     <Routes>
       <Route 
       path='/'

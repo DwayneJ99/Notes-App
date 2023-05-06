@@ -1,12 +1,19 @@
 import { Link, useNavigate } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
+
 
   const div = {
         textAlign: "center",
         border: "5px solid",
         margin: "10px auto",
         width: "80%",
+        
     }
-
+    const div2 = {
+       color: "white"
+        
+    }
 
 
     const Note = ({post, deleteNote}) => {
@@ -26,7 +33,7 @@ import { Link, useNavigate } from "react-router-dom"
         </Link>
         <h2>{post.note}</h2>
         <form onSubmit={handleDelete}>
-            <input type='submit' value= 'Delete Note' />
+            <input type='submit' value = 'Delete Note' />
         </form>
     </div>
     )
